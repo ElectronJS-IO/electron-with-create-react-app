@@ -3,24 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "concurrently": "^3.5.0",
     "electron": "^1.4.14",
-    "react-scripts": "0.8.5",
     "wait-on": "^2.0.2"
   },
   "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
   },
   "homepage": "./",
   "main": "src/electron-starter.js",
   "scripts": {
-    "react-start": "react-scripts start",
-    "electron-start": "ELECTRON_START_URL=http://localhost:3000/ electron .",
-    "start": "concurrently 'npm run react-start' 'wait-on http://localhost:3000/ && npm run electron-start'",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "dev": "nf start -p 3000"
+    "electron": "electron .",
+    "start": "wait-on http://localhost:3000/ && ELECTRON_START_URL=http://localhost:3000/ npm run electron",
+    "exocortex": "ELECTRON_START_URL=https://app.exocortex.ai npm run electron",
+    "muse-eeg": "ELECTRON_START_URL=http://muse-eeg-app.firebaseapp.com npm run electron"
   }
 }
